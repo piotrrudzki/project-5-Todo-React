@@ -8,7 +8,7 @@ const Task = (props) => {
     return (
       <>
         <li style={priority ? { color: "red" } : {}}>{text}</li>
-        <button onClick={() => props.done(id)}>Zrobione</button>
+        <button onClick={() => props.done(id)}>Done</button>
         <button onClick={() => props.delete(id)}>X</button>
         <br />
         <span>Add date : {dateAdd}</span>

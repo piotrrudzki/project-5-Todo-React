@@ -49,22 +49,25 @@ class AddTask extends Component {
 
     maxDate = yyyy + "-" + mm + "-" + dd;
     return (
-      <>
+      <div className="addTask">
         <h2>Add Tasks</h2>
         <form>
-          <label htmlFor="task">Your task </label>
-          <input
-            value={this.state.text}
-            placeholder="Type your task..."
-            type="text"
-            onChange={this.handleInputChange}
-          />
-          <button onClick={this.handleClick}>Add</button>
+          <label htmlFor="task">
+            <p>Your task</p>
+            <input
+              value={this.state.text}
+              placeholder="Type your task..."
+              type="text"
+              onChange={this.handleInputChange}
+            />
+            <button onClick={this.handleClick}>Add</button>
+          </label>
           <br />
           <label htmlFor="priority">
             Priority
             <input
               id="priority"
+              className="checkbox"
               type="checkbox"
               checked={this.state.checked}
               onChange={this.handleCheckboxChange}
@@ -73,6 +76,7 @@ class AddTask extends Component {
           <br />
           <label htmlFor="date">
             Finish date
+            <br />
             <input
               id="date"
               type="date"
@@ -83,7 +87,7 @@ class AddTask extends Component {
             />
           </label>
         </form>
-      </>
+      </div>
     );
   }
 }
