@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import "../App.css";
 import ListTasks from "./ListTasks";
 import AddTask from "./AddTask";
@@ -52,15 +53,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <h1>TODO App</h1>
-        <AddTask add={this.addTask} />
-        <ListTasks
-          list={this.state.list}
-          done={this.handleDone}
-          delete={this.handleDelete}
-        />
-      </div>
+      <Router>
+        <div className="app">
+          <h1>TODO App</h1>
+          <AddTask add={this.addTask} />
+          <ListTasks
+            list={this.state.list}
+            done={this.handleDone}
+            delete={this.handleDelete}
+          />
+        </div>
+      </Router>
     );
   }
 }
